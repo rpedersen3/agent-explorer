@@ -20,11 +20,11 @@
    
    **Build command**:
    ```
-   pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build
+   cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build
    ```
-   > **Note**: For monorepo projects, Cloudflare runs this from the repo root. The SDKs need to be built first, then the web app.
+   > **Note**: Since root directory is set to `apps/web`, we need to `cd ../..` to get to the repo root to run monorepo commands. The SDKs need to be built first, then the web app.
    
-   **Build output directory**: `.next` ⭐ (Next.js default build output)
+   **Build output directory**: `.next` ⭐ (Relative to the root directory, so this is `apps/web/.next`)
    
    **Node.js version**: `18` or `20`
 
@@ -41,9 +41,10 @@
 6. Click **Save**
 
 > **Quick Reference**: These settings tell Cloudflare to:
-> - Build from `apps/web/package.json`
+> - Use `apps/web` as the working directory
+> - Build from repo root via `cd ../..` and pnpm filter targeting `agent-explorer-web` package
 > - Use the Next.js framework preset (handles routing, API routes, etc.)
-> - Output to `.next` directory
+> - Output to `.next` directory (relative to `apps/web`)
 
 ### Step 3: Set Environment Variables
 1. Go to **Settings** → **Environment variables**
