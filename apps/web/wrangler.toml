@@ -16,3 +16,4 @@ compatibility_flags = ["nodejs_compat"]
 
 # Note: pages_build_output_dir should NOT be set when using the Next.js framework preset
 # The Next.js preset handles the output directory automatically
+# Updated for Cloudflare Pages Git-connected deployment
