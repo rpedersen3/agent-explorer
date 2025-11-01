@@ -28,12 +28,16 @@
    
    **Node.js version**: `18` or `20`
 
-4. **Optional but Recommended**: Configure Build Watch Paths to only deploy when web project changes
+4. **⚠️ Important**: Leave **"Deploy command"** BLANK or set to "none"
+   - Cloudflare Pages with Next.js preset handles deployment automatically
+   - Do NOT set it to `npx wrangler deploy` or any other command
+
+5. **Optional but Recommended**: Configure Build Watch Paths to only deploy when web project changes
    - Check the **"Build watch paths"** option
    - In **Include paths**, add: `apps/web/**`
    - This prevents deployments when other parts of the monorepo change
 
-5. Click **Save**
+6. Click **Save**
 
 > **Quick Reference**: These settings tell Cloudflare to:
 > - Build from `apps/web/package.json`
