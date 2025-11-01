@@ -13,9 +13,7 @@ const nextConfig = {
       '@ensdomains/ensjs',
     ],
     // Exclude Node.js-only packages from server bundle
-    serverComponentsExternalPackages: [
-      'better-sqlite3', // Already removed, but keep here as safety
-    ],
+    serverComponentsExternalPackages: [],
   },
   
   // Optimize for Cloudflare Pages

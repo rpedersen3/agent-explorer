@@ -39,6 +39,9 @@ importers:
         specifier: ^2.37.11
         version: 2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@6.0.5)(zod@4.1.12)
     devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.24
       '@types/react':
         specifier: ^18.0.0
         version: 18.3.26
