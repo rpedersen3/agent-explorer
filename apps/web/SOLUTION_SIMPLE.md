@@ -11,7 +11,7 @@ Cloudflare Pages doesn't know your `.next` directory contains a Next.js App Rout
 ### Step 1: Check Cloudflare Dashboard
 
 1. Go to: https://dash.cloudflare.com/
-2. Pages → erc8004-web → Settings → Builds & deployments
+2. Pages → agent-explorer → Settings → Builds & deployments
 3. **Look at "Framework preset"** 
    - What does it say?
    - If it's blank or "Other" → That's the problem!

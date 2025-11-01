@@ -1,10 +1,12 @@
 # Cloudflare Dashboard Deployment - Step by Step
 
+> **Important**: These instructions are for **Git-connected Pages projects**. If you're using Direct Upload (deploying with `wrangler pages deploy`), you don't have access to "Builds & deployments" settings. For Direct Upload, the root directory is automatically determined by where you run the command from (`apps/web`).
+
 ## Quick Deploy Checklist
 
 ### Step 1: Access Cloudflare Dashboard
 1. Go to https://dash.cloudflare.com/
-2. Navigate to **Pages** → Your project (`erc8004-web`)
+2. Navigate to **Pages** → Your project (`agent-explorer`)
 3. If you don't have a project yet, click **Create a project** → **Connect to Git**
 
 ### Step 2: Configure Build Settings
@@ -12,20 +14,31 @@
 2. Click **Edit configuration**
 3. Set the following:
 
-   **Framework preset**: `Next.js`
+   **Framework preset**: `Next.js` ⭐ (This is critical!)
    
-   **Root directory**: `apps/web`
+   **Root directory**: `apps/web` ⭐ (Points to the web app in your monorepo)
    
    **Build command**:
    ```
-   cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter erc8004-web build
+   pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build
    ```
+   > **Note**: For monorepo projects, Cloudflare runs this from the repo root. The SDKs need to be built first, then the web app.
    
-   **Build output directory**: `.next`
+   **Build output directory**: `.next` ⭐ (Next.js default build output)
    
    **Node.js version**: `18` or `20`
 
-4. Click **Save**
+4. **Optional but Recommended**: Configure Build Watch Paths to only deploy when web project changes
+   - Check the **"Build watch paths"** option
+   - In **Include paths**, add: `apps/web/**`
+   - This prevents deployments when other parts of the monorepo change
+
+5. Click **Save**
+
+> **Quick Reference**: These settings tell Cloudflare to:
+> - Build from `apps/web/package.json`
+> - Use the Next.js framework preset (handles routing, API routes, etc.)
+> - Output to `.next` directory
 
 ### Step 3: Set Environment Variables
 1. Go to **Settings** → **Environment variables**

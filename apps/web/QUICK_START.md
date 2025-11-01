@@ -6,7 +6,7 @@
 # From project root
 pnpm install
 pnpm build:sdks
-NODE_ENV=production pnpm --filter erc8004-web build
+NODE_ENV=production pnpm --filter agent-explorer-web build
 ```
 
 ## Step 2: Check Build Size
@@ -28,9 +28,12 @@ Should be under 100MB. If larger, run cleanup:
 1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/) → Pages
 2. Create project from Git
 3. **Configure**:
+   - Framework preset: `Next.js`
    - Root dir: `apps/web`
-   - Build cmd: `cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter erc8004-web build`
+   - Build cmd: `cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build`
    - Output dir: `.next`
+   - Node version: `18` or `20`
+   - **Optional**: Build watch paths → Include: `apps/web/**`
 4. **Set Environment Variables** (see below)
 5. Deploy
 

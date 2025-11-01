@@ -43,7 +43,7 @@ Deploy via the dashboard using the built-in Next.js integration:
 1. Go to Cloudflare Dashboard → Pages → Settings
 2. Framework preset: **Next.js**
 3. Root directory: `apps/web`
-4. Build command: `cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter erc8004-web build`
+4. Build command: `cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build`
 5. Output directory: `.next`
 6. Environment variables: See `QUICK_START.md`
 

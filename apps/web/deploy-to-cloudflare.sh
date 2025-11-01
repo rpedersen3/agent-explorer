@@ -12,7 +12,7 @@ cd "$(dirname "$0")"
 # Check if .next exists
 if [ ! -d ".next" ]; then
   echo "❌ Error: .next directory not found. Please build the project first:"
-  echo "   cd ../.. && pnpm build:sdks && NODE_ENV=production pnpm --filter erc8004-web build"
+  echo "   cd ../.. && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build"
   exit 1
 fi
 
@@ -109,7 +109,7 @@ fi
 
 # Deploy to Cloudflare Pages
 echo "📤 Deploying to Cloudflare Pages..."
-wrangler pages deploy .next --project-name=erc8004-web --commit-dirty=true
+wrangler pages deploy .next --project-name=agent-explorer --commit-dirty=true
 
 echo "✅ Deployment complete!"
 

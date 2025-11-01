@@ -14,16 +14,17 @@
 
 Don't manually deploy. Let Cloudflare build from Git:
 
-**In Cloudflare Dashboard → Pages → erc8004-web → Settings**:
+**In Cloudflare Dashboard → Pages → agent-explorer → Settings**:
 
 1. Framework preset: **Next.js** (not "Other" or blank!)
 2. Root directory: `apps/web`
 3. Build command: 
    ```
-   cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter erc8004-web build
+   cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build
    ```
 4. Build output directory: `.next`
 5. Node version: 18 or 20
+6. **Optional**: Build watch paths → Include: `apps/web/**` (to deploy only when web project changes)
 
 **Then**: Set environment variables and let it deploy automatically.
 
@@ -39,7 +40,7 @@ If you must use manual Wrangler deploys:
 
 2. Deploy the output:
    ```bash
-   wrangler pages deploy .vercel/output/static --project-name=erc8004-web
+   wrangler pages deploy .vercel/output/static --project-name=agent-explorer
    ```
 
 3. Update `wrangler.toml`:

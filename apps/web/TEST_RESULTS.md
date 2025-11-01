@@ -3,7 +3,7 @@
 ## ✅ Test Deployment SUCCESS
 
 A simple HTML test page works perfectly:
-- **Deployment URL**: https://52ef3b4b.erc8004-web.pages.dev ✅ Returns 200
+- **Deployment URL**: https://52ef3b4b.agent-explorer.pages.dev ✅ Returns 200
 - **Custom Domain**: https://www.8004-agent.com ✅ Returns 200
 
 This proves:
@@ -31,7 +31,7 @@ Cloudflare Pages needs to be told this is a Next.js app. Two ways:
 
 ### Option 1: Cloudflare Dashboard Configuration (Recommended)
 
-Go to Cloudflare Dashboard → Pages → erc8004-web → Settings → Builds & deployments
+Go to Cloudflare Dashboard → Pages → agent-explorer → Settings → Builds & deployments
 
 **Set**:
 - Framework preset: **"Next.js"** (currently likely "Other" or blank)
@@ -56,7 +56,7 @@ Keep using Wrangler but create proper output:
 ## Next Steps
 
 **Check Cloudflare Dashboard**:
-1. Go to Pages → erc8004-web → Settings
+1. Go to Pages → agent-explorer → Settings
 2. Look at "Framework preset"
 3. Tell me what it says
 
