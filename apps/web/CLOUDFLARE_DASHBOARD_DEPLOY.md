@@ -28,9 +28,10 @@
    
    **Node.js version**: `18` or `20`
 
-4. **⚠️ Important**: Leave **"Deploy command"** BLANK or set to "none"
+4. **⚠️ Important**: Set **"Deploy command"** to `exit 0`
    - Cloudflare Pages with Next.js preset handles deployment automatically
-   - Do NOT set it to `npx wrangler deploy` or any other command
+   - `exit 0` does nothing and just returns success
+   - Do NOT set it to `npx wrangler deploy` or any other real command
 
 5. **Optional but Recommended**: Configure Build Watch Paths to only deploy when web project changes
    - Check the **"Build watch paths"** option
@@ -82,6 +83,7 @@ GRAPHQL_API_URL=https://erc8004-indexer-graphql.richardpedersen3.workers.dev/gra
 
 3. Make sure to select **Production** environment for each variable
 4. Click **Save**
+
 
 ### Step 4: Trigger Deployment
 1. Go to **Deployments** tab

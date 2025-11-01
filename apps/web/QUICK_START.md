@@ -33,6 +33,7 @@ Should be under 100MB. If larger, run cleanup:
    - Build cmd: `cd ../.. && pnpm install && pnpm build:sdks && NODE_ENV=production pnpm --filter agent-explorer-web build`
    - Output dir: `.next`
    - Node version: `18` or `20`
+   - **⚠️ Important**: Set **"Deploy command"** to `exit 0`
    - **Optional**: Build watch paths → Include: `apps/web/**`
 4. **Set Environment Variables** (see below)
 5. Deploy

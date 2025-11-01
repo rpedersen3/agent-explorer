@@ -24,7 +24,8 @@ Don't manually deploy. Let Cloudflare build from Git:
    ```
 4. Build output directory: `.next`
 5. Node version: 18 or 20
-6. **Optional**: Build watch paths → Include: `apps/web/**` (to deploy only when web project changes)
+6. **⚠️ Important**: Set **"Deploy command"** to `exit 0` - Cloudflare Pages handles deployment automatically
+7. **Optional**: Build watch paths → Include: `apps/web/**` (to deploy only when web project changes)
 
 **Then**: Set environment variables and let it deploy automatically.
 
